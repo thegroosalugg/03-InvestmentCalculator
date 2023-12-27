@@ -34,24 +34,24 @@ export default function UserInput() {
         <InputField
           label={"initialInvestment"}
           value={userInput.initialInvestment}
-          onChange={(value) => handleChange("initialInvestment", value)}
+          onChange={(value) => handleChange(label, value)}
         />
         <InputField
           label={"annualInvestment"}
           value={userInput.annualInvestment}
-          onChange={(value) => handleChange("annualInvestment", value)}
+          onChange={(value) => handleChange(label, value)}
         />
       </div>
       <div className="input-group">
         <InputField
           label={"expectedReturn"}
           value={userInput.expectedReturn}
-          onChange={(value) => handleChange("expectedReturn", value)}
+          onChange={(value) => handleChange(label, value)}
         />
         <InputField
           label={"duration"}
           value={userInput.duration}
-          onChange={(value) => handleChange("duration", value)}
+          onChange={(value) => handleChange(label, value)}
         />
       </div>
     </section>
