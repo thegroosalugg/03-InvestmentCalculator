@@ -12,7 +12,7 @@ function App() {
     duration: 0,
   });
 
-  const [results, setResults] = useState();
+  // const [results, setResults] = useState();
 
   function handleChange(inputId, value) {
     setUserInput((prevData) => {
@@ -24,22 +24,31 @@ function App() {
 
   return (
     <>
-      <Header />
-      <UserInput userInput={userInput} handleChange={handleChange} />
-      <Table />
-      <ol>
-        {myResults.map((item, index) => (
-          <li key={index}>
-            <ul>
-              {Object.entries(item).map(([key, value]) => (
-                <li key={key}>
-                  {key}: {formatter.format(value)}
-                </li>
-              ))}
-            </ul>
-          </li>
+    <Header />
+    <UserInput userInput={userInput} handleChange={handleChange} />
+    <table id="result">
+      <thead>
+        <tr>
+          {/* Render header cells here */}
+          <th>Year</th>
+          <th>Interest Earned</th>
+          <th>Value End of Year</th>
+          <th>Annual Investment</th>
+        </tr>
+      </thead>
+      <tbody>
+        {myResults.map((result, index) => (
+          <tr key={index}>
+            {/* Render data cells here */}
+            <td>{result.year}</td>
+            <td>{result.interest}</td>
+            <td>{result.valueEndOfYear}</td>
+            <td>{result.annualInvestment}</td>
+          </tr>
         ))}
-      </ol>    </>
+      </tbody>
+    </table>
+  </>
   );
 }
 
