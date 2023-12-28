@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function InputField({ label, value, onChange }) {
   return (
     <p>
@@ -14,20 +12,7 @@ function InputField({ label, value, onChange }) {
   );
 }
 
-export default function UserInput() {
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 0,
-    annualInvestment: 0,
-    expectedReturn: 0,
-    duration: 0,
-  });
-
-  function handleChange(inputId, value) {
-    setUserInput((prevData) => {
-      return { ...prevData, [inputId]: value };
-    });
-  }
-
+export default function UserInput({userInput, handleChange}) {
   return (
     <section id="user-input">
       <div className="input-group">
