@@ -27,7 +27,19 @@ function App() {
       <Header />
       <UserInput userInput={userInput} handleChange={handleChange} />
       <Table />
-    </>
+      <ol>
+        {myResults.map((item, index) => (
+          <li key={index}>
+            <ul>
+              {Object.entries(item).map(([key, value]) => (
+                <li key={key}>
+                  {key}: {formatter.format(value)}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>    </>
   );
 }
 
