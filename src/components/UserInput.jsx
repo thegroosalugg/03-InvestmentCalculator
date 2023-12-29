@@ -1,4 +1,4 @@
-function InputField({ label, value, onChange }) {
+function InputField({ label, value, input }) {
   return (
     <p>
       <label>{label}</label>
@@ -6,7 +6,7 @@ function InputField({ label, value, onChange }) {
         type="number"
         required
         value={value}
-        onChange={(event) => onChange(event.target.value)} // this data is always collected as a string
+        onChange={(event) => input(event.target.value)} // this data is always collected as a string
       />
     </p>
   );
@@ -19,24 +19,24 @@ export default function UserInput({userInput, handleChange}) {
         <InputField
           label={"initialInvestment"}
           value={userInput.initialInvestment}
-          onChange={(value) => handleChange("initialInvestment", value)}
+          input={(newValue) => handleChange("initialInvestment", newValue)}
         />
         <InputField
           label={"annualInvestment"}
           value={userInput.annualInvestment}
-          onChange={(value) => handleChange("annualInvestment", value)}
+          input={(newValue) => handleChange("annualInvestment", newValue)}
         />
       </div>
       <div className="input-group">
         <InputField
           label={"expectedReturn"}
           value={userInput.expectedReturn}
-          onChange={(value) => handleChange("expectedReturn", value)}
+          input={(newValue) => handleChange("expectedReturn", newValue)}
         />
         <InputField
           label={"duration"}
           value={userInput.duration}
-          onChange={(value) => handleChange("duration", value)}
+          input={(newValue) => handleChange("duration", newValue)}
         />
       </div>
     </section>

@@ -11,9 +11,9 @@ function App() {
     duration: 0,
   });
 
-  function handleChange(inputId, value) {
+  function handleChange(inputId, newValue) {
     setUserInput((prevData) => {
-      return { ...prevData, [inputId]: +value }; // adding + operator infront of value insures it is converted from string to integer
+      return { ...prevData, [inputId]: +newValue }; // adding + operator infront of value insures it is converted from string to integer
     });
   }
 
