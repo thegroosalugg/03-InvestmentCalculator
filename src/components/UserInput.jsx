@@ -6,7 +6,7 @@ function InputField({ label, value, onChange }) {
         type="number"
         required
         value={value}
-        onChange={(event) => onChange(event.target.value)}
+        onChange={(event) => onChange(event.target.value)} // this data is always collected as a string
       />
     </p>
   );

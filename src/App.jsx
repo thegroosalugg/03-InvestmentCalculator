@@ -16,7 +16,7 @@ function App() {
 
   function handleChange(inputId, value) {
     setUserInput((prevData) => {
-      return { ...prevData, [inputId]: value };
+      return { ...prevData, [inputId]: +value }; // adding + operator infront of value insures it is converted from string to integer
     });
   }
 
@@ -41,9 +41,9 @@ function App() {
           <tr key={index}>
             {/* Render data cells here */}
             <td>{result.year}</td>
-            <td>{result.interest}</td>
-            <td>{result.valueEndOfYear}</td>
-            <td>{result.annualInvestment}</td>
+            <td>{formatter.format(result.interest)}</td>
+            <td>{formatter.format(result.valueEndOfYear)}</td>
+            <td>{formatter.format(result.annualInvestment)}</td>
           </tr>
         ))}
       </tbody>
